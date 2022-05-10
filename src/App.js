@@ -1,24 +1,28 @@
 import logo from './logo.svg';
-import './App.css';
+import Planets from "./components/planets";
+import People from "./components/people";
+import styled from "styled-components";
 
+const Wrapper = styled.div`
+  background: darkgreen;
+  background: linear-gradient(darkgreen,darkred);
+  width: 100vw;
+  height: 100vh;
+`;
+const SecondWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0 ,0.75);
+  background: linear-gradient(to right top, rgba(0,0,0,0.75), rgba(red));
+  backdrop-filter: blur(12px);
+`
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Wrapper>
+
+      <SecondWrapper>
+      </SecondWrapper>
+  </Wrapper>
   );
 }
 
