@@ -3,7 +3,8 @@ import React from 'react';
 function People(props) {
 
     return (
-        <div>elo</div>
+        <h1>pedsaople</h1>
+
     );
 }
 

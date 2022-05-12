@@ -2,7 +2,7 @@ import React from 'react';
 
 function Starwars(props) {
     return (
-        <div></div>
+        <div>startwars</div>
     );
 }
 

@@ -3,7 +3,7 @@ import React from 'react';
 function Planets(props) {
 
     return (
-        <div></div>
+        <div>planets</div>
     );
 }
 
