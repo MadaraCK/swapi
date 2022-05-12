@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500&display=swap');
 .vehicle-div {
   display: flex;
   justify-content: center;
@@ -11,11 +12,26 @@
 }
 
 .vehicle {
+  font-family: 'Inconsolata', monospace;
   margin: 15px;
   list-style: none;
   border: 1px solid black;
   min-width: 200px;
   max-width: 300px;
+}
+.vehicle-text{
+  color: purple;
+  font-size: 42px;
+  font-weight: bold;
+  font-family: 'Inconsolata', monospace;
+  text-transform: uppercase;
+
+}
+.h1-vehicles,
+.h2-vehicles{
+  text-align: center;
+  text-transform: uppercase;
+
 }
 
 .h1-vehicles {

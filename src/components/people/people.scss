@@ -1,6 +1,43 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500&display=swap');
+.vehicle-div {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  overflow: auto;
+  max-width: 900px;
+  max-height: 1000px;
   margin: 0 auto;
-  padding: 0 20px;
+
+
+}
+
+.vehicle {
+  text-align: center;
+  font-family: 'Inconsolata', monospace;
+  margin: 15px;
+  list-style: none;
+  border: 1px solid black;
+  width: 250px;
+}
+.vehicle-text{
+  color: purple;
+  font-size: 42px;
+  font-weight: bold;
+  font-family: 'Inconsolata', monospace;
+  text-transform: uppercase;
+
+}
+.h1-vehicles {
+  text-transform: uppercase;
+  font-weight: normal;
+  color: gold;
+}
+.li-text{
+  text-align: center;
+}
+
+.h2-vehicles {
+  text-transform: uppercase;
+
+  color: black;
 }

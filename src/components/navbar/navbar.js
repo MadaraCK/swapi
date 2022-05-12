@@ -15,7 +15,7 @@ function Navbar(props) {
             <header className="nav_header">
                 <h1 className="h1">Star Wars</h1>
                 <ul className="ul">
-                    <li >
+                    <li className="li-navbar">
                         <Link className="link" to="/">Home</Link>
                     </li>
                     <li>
