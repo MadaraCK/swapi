@@ -1,0 +1,28 @@
+.vehicle-div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: auto;
+  max-width: 900px;
+  max-height: 1000px;
+  margin: 0 auto;
+
+
+}
+
+.vehicle {
+  margin: 15px;
+  list-style: none;
+  border: 1px solid black;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.h1-vehicles {
+  font-weight: normal;
+  color: gold;
+}
+
+.h2-vehicles {
+  color: black;
+}

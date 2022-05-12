@@ -1,8 +1,12 @@
 import React from 'react';
+import './starwars.scss'
+
 
 function Starwars(props) {
     return (
-        <div>startwars</div>
+        <div className="container">
+            <div>startwars</div>
+        </div>
     );
 }
 

@@ -7,12 +7,11 @@ import {
     Switch,
     NavLink,
 } from 'react-router-dom';
-import Menu from "../menu/menu";
 
 
 function Navbar(props) {
     return (
-        <HashRouter>
+        <div>
             <header className="nav_header">
                 <h1 className="h1">Star Wars</h1>
                 <ul className="ul">
@@ -30,7 +29,7 @@ function Navbar(props) {
                     </li>
                 </ul>
             </header>
-        </HashRouter>
+        </div>
     );
 
 }
