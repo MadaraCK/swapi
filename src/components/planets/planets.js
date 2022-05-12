@@ -3,8 +3,9 @@ import React from 'react';
 function Planets(props) {
 
     return (
-        <div>planets</div>
-    );
+        <div>{Planets.map((planets) =>{
+            return <h1>{planets}</h1>
+        })}</div>    );
 }
 
 export default Planets;

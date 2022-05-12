@@ -1,10 +1,12 @@
 import React from 'react';
+import App from '../../App'
 
 function People(props) {
 
     return (
-        <h1>pedsaople</h1>
-
+        <div>{People.map((people) =>{
+            return <h1>{people}</h1>
+        })}</div>
     );
 }
 

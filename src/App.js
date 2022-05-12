@@ -17,19 +17,19 @@ function App(props) {
     useEffect(() => {
             async function People() {
                 let people = await fetch('https://swapi.dev/api/people/');
-                let data = await people.json();
-                setPeople(data.results);
+                let api = await people.json();
+                setPeople(api.results);
             }
 
             async function Planets() {
                 let planets = await fetch('https://swapi.dev/api/planets/')
-                let data = await planets.json();
-                setPlanets(data.results);
+                let api = await planets.json();
+                setPlanets(api.results);
             }
             async function Vehicles() {
                 let vehicles = await fetch('https://swapi.dev/api/vehicles/')
-                let data = await vehicles.json();
-                setVehicles(data.results);
+                let api = await vehicles.json();
+                setVehicles(api.results);
             }
 
             People()
@@ -44,10 +44,9 @@ function App(props) {
     return (
         <div className="bgc">
             <div className="container">
-                <Navbar>
-                    <People/>
+                <Navbar/>
+                <People/>
 
-                </Navbar>
             </div>
         </div>
     );
