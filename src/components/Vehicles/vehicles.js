@@ -1,14 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import "./vehicles.scss"
+import * as ReactBootStrap from "react-bootstrap";
 
 function Vehicles() {
     const [vehicles, setVehicles] = useState([]);
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
             async function vehicles() {
                 let vehicles = await fetch('https://swapi.dev/api/vehicles/');
                 let api = await vehicles.json();
                 setVehicles(api.results);
+                setLoading(false)
+
             }
 
             vehicles()
@@ -18,7 +23,9 @@ function Vehicles() {
     return (
         <div>
             <div className="container vehicle-text">Vehicles</div>
-            <div className="vehicle-div">
+            {loading? (<ReactBootStrap.Spinner animation="border" className="container spinner "/>) : (
+
+                <div className="vehicle-div">
                 {vehicles.map((vehicle, index) => {
                     return (
                         <ul className="vehicle">
@@ -34,6 +41,8 @@ function Vehicles() {
                     )
                 })}
             </div>
+            )}
+
         </div>
     );
 }

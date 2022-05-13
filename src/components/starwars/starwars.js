@@ -5,7 +5,7 @@ import './starwars.scss'
 function Starwars(props) {
     return (
         <div className="container">
-            <div>startwars</div>
+            <input type="text"/>
         </div>
     );
 }

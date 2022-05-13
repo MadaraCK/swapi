@@ -1,13 +1,18 @@
 import React,{useState,useEffect} from 'react';
 import "./planets.scss"
+import * as ReactBootStrap from "react-bootstrap";
 function Planets(props) {
     const [planets, setPlanets] = useState([]);
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
             async function planets() {
                 let planets = await fetch('https://swapi.dev/api/planets/');
                 let api = await planets.json();
                 setPlanets(api.results);
+                setLoading(false)
+
             }
             planets()
         },
@@ -15,7 +20,8 @@ function Planets(props) {
     return (
         <div>
             <div className="container vehicle-text">planets</div>
-            <div className="vehicle-div">
+            {loading? (<ReactBootStrap.Spinner animation="border" className="container spinner "/>) : (
+                <div className="vehicle-div">
                 {planets.map((planets, index) => {
                     return (
                         <ul className="vehicle">
@@ -33,6 +39,8 @@ function Planets(props) {
                     )
                 })}
             </div>
+            )}
+
         </div>
     );
 }
