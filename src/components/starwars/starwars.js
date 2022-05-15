@@ -1,11 +1,11 @@
 import React from 'react';
 import './starwars.scss'
+import '../people/people'
 
 
-function Starwars(props) {
+function Starwars({people}) {
     return (
         <div className="container">
-            <input type="text"/>
         </div>
     );
 }

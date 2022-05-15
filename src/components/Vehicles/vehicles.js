@@ -5,6 +5,8 @@ import * as ReactBootStrap from "react-bootstrap";
 function Vehicles() {
     const [vehicles, setVehicles] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [searchVehicles, setSearchVehicles] = useState('')
+
 
 
     useEffect(() => {
@@ -22,11 +24,25 @@ function Vehicles() {
     console.log('vehicles', vehicles)
     return (
         <div>
-            <div className="container vehicle-text">Vehicles</div>
+            <div className="container vehicle-text">search Vehicles</div>
             {loading? (<ReactBootStrap.Spinner animation="border" className="container spinner "/>) : (
 
                 <div className="vehicle-div">
-                {vehicles.map((vehicle, index) => {
+                    <input type="text"
+                           placeholder="Search characters.."
+                           className="input"
+                           onChange={(e) => setSearchVehicles(e.target.value)}/>
+
+                    {vehicles.filter((valueVeh) =>{
+                        if (searchVehicles === "") {
+                            return valueVeh;
+                        }else if (
+                            valueVeh.name.toLowerCase().includes(searchVehicles.toLowerCase())
+                        ){
+                            return valueVeh
+                        }
+                    })
+                        .map((vehicle, index) => {
                     return (
                         <ul className="vehicle">
                             <h1 className="h1-vehicles">name</h1>

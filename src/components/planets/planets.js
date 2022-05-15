@@ -4,6 +4,8 @@ import * as ReactBootStrap from "react-bootstrap";
 function Planets(props) {
     const [planets, setPlanets] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [searchPlanets, setSearchPlanets] = useState('')
+
 
 
     useEffect(() => {
@@ -19,10 +21,23 @@ function Planets(props) {
         [])
     return (
         <div>
-            <div className="container vehicle-text">planets</div>
+            <div className="container vehicle-text">search planets</div>
             {loading? (<ReactBootStrap.Spinner animation="border" className="container spinner "/>) : (
                 <div className="vehicle-div">
-                {planets.map((planets, index) => {
+                    <input type="text"
+                           placeholder="Search planets.."
+                           className="input"
+                           onChange={(e) => setSearchPlanets(e.target.value)}/>
+                {planets.filter((valuePlan) => {
+                    if (searchPlanets === ""){
+                        return valuePlan;
+                    }else if (
+                        valuePlan.name.toLowerCase().includes(searchPlanets.toLowerCase())
+                    ){
+                        return valuePlan
+                    }
+                })
+                    .map((planets, index) => {
                     return (
                         <ul className="vehicle">
                             <h1 className="h1-vehicles">name</h1>

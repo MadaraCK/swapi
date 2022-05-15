@@ -4,9 +4,10 @@ import App from '../../App'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as ReactBootStrap from 'react-bootstrap';
 
-function People(props) {
+function People() {
     const [people, setPeople] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [searchPeople, setSearchPeople] = useState('')
 
     useEffect(() => {
             async function people() {
@@ -21,11 +22,24 @@ function People(props) {
     return (
         <div>
 
-            <div className="container vehicle-text">People</div>
+            <div className="container vehicle-text">Search People</div>
                         {loading? (<ReactBootStrap.Spinner animation="border" className="container spinner "/>) : (
             <div className="vehicle-div">
+                <input type="text"
+                       placeholder="Search characters.."
+                       className="input"
+                       onChange={(e) => setSearchPeople(e.target.value)}/>
 
-                {people.map((people, index) => {
+                {people.filter((value) => {
+                    if (searchPeople === ""){
+                        return value;
+                    }else if (
+                        value.name.toLowerCase().includes(searchPeople.toLowerCase())
+                    ){
+                        return value;
+                    }
+                })
+                    .map((people, index) => {
                     return (
 
                     <ul className="vehicle">
