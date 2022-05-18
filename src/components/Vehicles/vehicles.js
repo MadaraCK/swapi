@@ -29,7 +29,7 @@ function Vehicles() {
 
                 <div className="vehicle-div">
                     <input type="text"
-                           placeholder="Search characters.."
+                           placeholder="Search vehicles.."
                            className="input"
                            onChange={(e) => setSearchVehicles(e.target.value)}/>
 

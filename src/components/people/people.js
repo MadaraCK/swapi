@@ -9,9 +9,11 @@ function People() {
     const [loading, setLoading] = useState(true);
     const [searchPeople, setSearchPeople] = useState('')
 
+
+
     useEffect(() => {
             async function people() {
-                let people = await fetch('https://swapi.dev/api/people/');
+                let people = await fetch('https://swapi.dev/api/people/?page=1');
                 let api = await people.json();
                 setPeople(api.results);
                 setLoading(false)
@@ -58,8 +60,8 @@ function People() {
                 })}
             </div>
                     )}
-
         </div>
+
     );
 }
 
